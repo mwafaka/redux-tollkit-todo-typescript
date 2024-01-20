@@ -5,7 +5,6 @@ export interface Todos {
     id: number;
     text: string;
     completed: boolean;
-  
   }
 
 export const todoSlice = createSlice({

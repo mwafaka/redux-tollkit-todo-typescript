@@ -4,12 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { toggleTodo, editTodo, deleteTodo,Todos } from '../features/todoSlice';
 
 
-interface todos {
-    id: number;
-    text: string;
-    completed: boolean;
-  
-  }
+
 const TodoList = () => {
 
   const todos = useSelector((state: Todos[]) => state.todos);
@@ -26,10 +21,10 @@ const TodoList = () => {
     dispatch(editTodo({ id: todoId, text: editedTodoText }));
     setEditingTodoId(null);
   };
-console.log(todos.length);
+
   return (
     <ol>
-      {todos.length>0?todos.map((todo) => (
+      {todos.length>0?todos.map((todo:Todos) => (
         <p key={todo.id}>
           {editingTodoId === todo.id ? (
             <>
