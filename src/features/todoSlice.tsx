@@ -2,6 +2,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 export interface Todos {
+    todos: [];
     id: number;
     text: string;
     completed: boolean;
@@ -12,7 +13,7 @@ export const todoSlice = createSlice({
   initialState: [] as Todos[],
   reducers: {
     addTodo: (state, action) => {
-      state.push({ id: Date.now(), text: action.payload, completed: false });
+      state.push({ id: Date.now(), text: action.payload, completed: false,todos:[] });
     },
     toggleTodo: (state, action) => {
       const todo = state.find((todo) => todo.id === action.payload);
